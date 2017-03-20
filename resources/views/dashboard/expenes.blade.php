@@ -1,6 +1,6 @@
 @extends ('layouts.dashboard')
 @section('title')
-Expenes
+Expense List
 @endsection
 @section('content')
 <div class="row">
@@ -9,7 +9,7 @@ Expenes
             <div class="box-header">
                 <div class="box-title"><div class="input-group input-group-sm" style="width: 150px;">
                     <div class="input-group-btn">
-                            <a href="/dashboard/expenes/add" class="btn btn-block btn-primary">Create New</a>
+                            <a href="/post-data/expense/add" class="btn btn-block btn-primary">Create New</a>
                         </div>
                     </div>
                 </div>
@@ -19,7 +19,7 @@ Expenes
                         <tr>
                             <th>Date</th>
                             <th>Reference No</th>
-                            <th>Expenes Type</th>
+                            <th>Expense Type</th>
                             <th>Price</th>
                             <th>Exchange Rate</th>
                             <th>Total</th>
@@ -34,9 +34,9 @@ Expenes
                             <td>{{$expene->currency}} {{number_format($expene->exchange_rate, 2, '.', ',')}}</td>
                             <td>USD {{number_format($expene->total, 2, '.', ',')}}</td>
                             <td>
-                                <a href="/dashboard/expenes/edit/{{$expene->id}}" class="text-primary">Edit</a>
+                                <a href="/post-data/expense/edit/{{$expene->id}}" class="text-primary">Edit</a>
                                  | 
-                                <a class="btnDelete text-danger" data-url="/dashboard/expenes/delete/{{$expene->id}}" href="javascript:void(0)" >Delete</a>
+                                <a class="btnDelete text-danger" data-url="/post-data/expense/delete/{{$expene->id}}" href="javascript:void(0)" >Delete</a>
                             </td>
                         </tr>
                         @endforeach

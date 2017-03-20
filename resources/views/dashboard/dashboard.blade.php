@@ -15,7 +15,7 @@ Dashboard
             <div class="icon">
                 <i class="fa fa-line-chart"></i>
             </div>
-            <a href="/dashboard/revenues" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+            <a href="/post-data/revenue" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
         </div>
     </div>
     <!-- ./col -->
@@ -29,7 +29,7 @@ Dashboard
             <div class="icon">
                 <i class="fa fa-bar-chart"></i>
             </div>
-            <a href="/dashboard/expenes" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+            <a href="/post-data/expense" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
         </div>
     </div>
     <!-- ./col -->
@@ -43,7 +43,7 @@ Dashboard
             <div class="icon">
                 <i class="fa fa-area-chart"></i>
             </div>
-            <a href="/dashboard/statements" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+            <a href="/report/income-statement" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
         </div>
     </div>
     <!-- ./col -->
@@ -57,7 +57,7 @@ Dashboard
             <div class="icon">
                 <i class="fa fa-users"></i>
             </div>
-            <a href="/dashboard/users" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+            <a href="/users" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
         </div>
     </div>
     <!-- ./col -->

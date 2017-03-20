@@ -1,6 +1,6 @@
 @extends ('layouts.dashboard')
 @section('title')
-Expenes Types
+Expense Type List
 @endsection
 @section('content')
 <div class="row">
@@ -9,7 +9,7 @@ Expenes Types
             <div class="box-header">
                 <div class="box-title"><div class="input-group input-group-sm" style="width: 150px;">
                     <div class="input-group-btn">
-                            <a href="/dashboard/expenes-types/add" class="btn btn-block btn-primary">Create New</a>
+                            <a href="/setup-data/expense-type/add" class="btn btn-block btn-primary">Create New</a>
                         </div>
                     </div>
                 </div>
@@ -18,7 +18,7 @@ Expenes Types
                 <table class="table table-hover">
                         <tr>
                             <th>Date</th>
-                            <th>Expenes Type</th>
+                            <th>Expense Type</th>
                             <th>Note</th>
                             <th>Action</th>
                         </tr>
@@ -28,9 +28,9 @@ Expenes Types
                             <td>{{$expenes_type->type}}</td>
                             <td>{{$expenes_type->note}}</td>
                             <td>
-                                <a href="/dashboard/expenes-types/edit/{{$expenes_type->id}}" class="text-primary">Edit</a>
+                                <a href="/setup-data/expense-type/edit/{{$expenes_type->id}}" class="text-primary">Edit</a>
                                  | 
-                                <a class="btnDelete text-danger" data-url="/dashboard/expenes-types/delete/{{$expenes_type->id}}" href="javascript:void(0)" >Delete</a>
+                                <a class="btnDelete text-danger" data-url="/setup-data/expense-type/delete/{{$expenes_type->id}}" href="javascript:void(0)" >Delete</a>
                             </td>
                         </tr>
                         @endforeach

@@ -47,7 +47,7 @@ class RevenueController extends Controller
     		'total'=>round($data['price']/$data['exchange_rate'],2),
     	]);
 
-    	return redirect('/dashboard/revenues')->with('flashMessage',['status'=>'success','message'=>'Successfully create revenue.']);
+    	return redirect('/post-data/revenue')->with('flashMessage',['status'=>'success','message'=>'Successfully create revenue.']);
     }
 
     public function showEditRevenueForm($revenue_id)
@@ -78,12 +78,12 @@ class RevenueController extends Controller
     		'total'=>round($data['price']/$data['exchange_rate'],2),
         ]);
 
-        return redirect('/dashboard/revenues')->with('flashMessage',['status'=>'success','message'=>'Successfully update revenue.']);
+        return redirect('/post-data/revenue')->with('flashMessage',['status'=>'success','message'=>'Successfully update revenue.']);
     }
 
     public function delete_revenue($revenue_id)
     {
         Revenue::findOrFail($revenue_id)->delete();
-        return redirect('/dashboard/revenues')->with('flashMessage',['status'=>'success','message'=>'Successfully delete revenue.']);
+        return redirect('/post-data/revenue')->with('flashMessage',['status'=>'success','message'=>'Successfully delete revenue.']);
     }
 }

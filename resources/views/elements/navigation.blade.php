@@ -28,8 +28,8 @@
             </span>
                 </a>
                 <ul class="treeview-menu">
-                    <li><a href="/dashboard/expenes-types"><i class="fa fa-file-text"></i> Expenes Types</a></li>
-                    <li><a href="/dashboard/revenue-types"><i class="fa fa-file-text"></i> Revenue Type</a></li>
+                    <li><a href="/setup-data/revenue-type"><i class="fa fa-file-text"></i>Revenue Type</a></li>
+                    <li><a href="/setup-data/expense-type"><i class="fa fa-file-text"></i>Expense Type</a></li>
                 </ul>
             </li>
              <li class="treeview">
@@ -41,8 +41,8 @@
             </span>
                 </a>
                 <ul class="treeview-menu">
-                    <li><a href="/dashboard/revenues"><i class="fa fa-files-o"></i>Revenues</a></li>
-                    <li><a href="/dashboard/expenes"><i class="fa fa-files-o"></i> Expendes</a></li>
+                    <li><a href="/post-data/revenue"><i class="fa fa-files-o"></i>Revenue</a></li>
+                    <li><a href="/post-data/expense"><i class="fa fa-files-o"></i>Expense</a></li>
                 </ul>
             </li>
             <li class="treeview">
@@ -54,9 +54,9 @@
             </span>
                 </a>
                 <ul class="treeview-menu">
-                    <li><a href="/"><i class="fa fa-files-o"></i>Revenues</a></li>
-                    <li><a href="/"><i class="fa fa-files-o"></i> Expendes</a></li>
-                    <li><a href="/dashboard/statements"><i class="fa fa-book"></i> Income Statemt</a></li>
+                    <li><a href="/report/revenue"><i class="fa fa-files-o"></i>Revenue</a></li>
+                    <li><a href="/report/expense"><i class="fa fa-files-o"></i>Expense</a></li>
+                    <li><a href="/report/income-statement"><i class="fa fa-book"></i>Income Statement</a></li>
                 </ul>
             </li>
 
@@ -84,7 +84,7 @@
                 </a>
             </li> -->
             <li class="treeview">
-                <a href="/dashboard/users">
+                <a href="/users">
                     <i class="fa fa-users"></i> <span>Users</span>
                 </a>
             </li>

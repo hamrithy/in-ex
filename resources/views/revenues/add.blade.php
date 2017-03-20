@@ -7,7 +7,7 @@ Create Revenue
     <div class="box-header with-border">
         <h3 class="box-title">Create Revenue</h3>
     </div>
-    {{Form::open(['url'=>'/dashboard/revenues/add','method'=>'post'])}}
+    {{Form::open(['url'=>'/post-data/revenue/add','method'=>'post'])}}
         <div class="box-body">
             <div class="form-group @if ($errors->has('date')) has-error @endif">
                 {{Form::label('date','Revenue Date')}}

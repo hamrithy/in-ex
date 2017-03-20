@@ -47,7 +47,7 @@ class ExpenesController extends Controller
     		'total'=>round($data['price']/$data['exchange_rate'],2),
     	]);
 
-    	return redirect('/dashboard/expenes')->with('flashMessage',['status'=>'success','message'=>'Successfully create expenes.']);
+    	return redirect('/post-data/expense')->with('flashMessage',['status'=>'success','message'=>'Successfully create expense.']);
     }
 
     public function showEditExpenesForm($expenes_id)
@@ -78,12 +78,12 @@ class ExpenesController extends Controller
     		'total'=>round($data['price']/$data['exchange_rate'],2),
         ]);
 
-        return redirect('/dashboard/expenes')->with('flashMessage',['status'=>'success','message'=>'Successfully update expenes.']);
+        return redirect('/post-data/expense')->with('flashMessage',['status'=>'success','message'=>'Successfully update expense.']);
     }
 
     public function delete_expenes($expenes_id)
     {
         Expenes::findOrFail($expenes_id)->delete();
-        return redirect('/dashboard/expenes')->with('flashMessage',['status'=>'success','message'=>'Successfully delete expenes.']);
+        return redirect('/post-data/expense')->with('flashMessage',['status'=>'success','message'=>'Successfully delete expense.']);
     }
 }

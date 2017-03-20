@@ -1,13 +1,13 @@
 @extends ('layouts.dashboard')
 @section('title')
-Update Revenue
+Edit Revenue
 @endsection
 @section('content')
 <div class="box box-primary">
     <div class="box-header with-border">
-        <h3 class="box-title">Update Revenue</h3>
+        <h3 class="box-title">Edit Revenue</h3>
     </div>
-    {{Form::model($revenue,['url'=>'/dashboard/revenues/edit/'.$revenue->id,'method'=>'post'])}}
+    {{Form::model($revenue,['url'=>'/post-data/revenue/edit/'.$revenue->id,'method'=>'post'])}}
         <div class="box-body">
             <div class="form-group @if ($errors->has('date')) has-error @endif">
                 {{Form::label('date','Revenue Date')}}

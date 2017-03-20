@@ -9,7 +9,7 @@ Users
             <div class="box-header">
                 <div class="box-title"><div class="input-group input-group-sm" style="width: 150px;">
                     <div class="input-group-btn">
-                            <a href="/dashboard/users/add" class="btn btn-block btn-primary">Create New</a>
+                            <a href="/users/add" class="btn btn-block btn-primary">Create New</a>
                         </div>
                     </div>
                 </div>
@@ -28,9 +28,9 @@ Users
                             <td>{{$user->name}}</td>
                             <td>{{$user->role}}</td>
                             <td>
-                                <a href="/dashboard/users/change-password/{{$user->id}}" class="text-primary">Change password</a>
+                                <a href="/users/change-password/{{$user->id}}" class="text-primary">Change password</a>
                                  | 
-                                <a class="btnDelete text-danger" data-url="/dashboard/users/delete/{{$user->id}}" href="javascript:void(0)" >Delete</a>
+                                <a class="btnDelete text-danger" data-url="/users/delete/{{$user->id}}" href="javascript:void(0)" >Delete</a>
                             </td>
                         </tr>
                         @endforeach

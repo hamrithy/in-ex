@@ -1,6 +1,6 @@
 @extends ('layouts.dashboard')
 @section('title')
-Revenues
+Revenue List
 @endsection
 @section('content')
 <div class="row">
@@ -9,7 +9,7 @@ Revenues
             <div class="box-header">
                 <div class="box-title"><div class="input-group input-group-sm" style="width: 150px;">
                     <div class="input-group-btn">
-                            <a href="/dashboard/revenues/add" class="btn btn-block btn-primary">Create New</a>
+                            <a href="/post-data/revenue/add" class="btn btn-block btn-primary">Create New</a>
                         </div>
                     </div>
                 </div>
@@ -34,9 +34,9 @@ Revenues
                             <td>{{$revenue->currency}} {{number_format($revenue->exchange_rate, 2, '.', ',')}}</td>
                             <td>USD {{number_format($revenue->total, 2, '.', ',')}}</td>
                             <td>
-                                <a href="/dashboard/revenues/edit/{{$revenue->id}}" class="text-primary">Edit</a>
+                                <a href="/post-data/revenue/edit/{{$revenue->id}}" class="text-primary">Edit</a>
                                  | 
-                                <a class="btnDelete text-danger" data-url="/dashboard/revenues/delete/{{$revenue->id}}" href="javascript:void(0)" >Delete</a>
+                                <a class="btnDelete text-danger" data-url="/post-data/revenue/delete/{{$revenue->id}}" href="javascript:void(0)" >Delete</a>
                             </td>
                         </tr>
                         @endforeach

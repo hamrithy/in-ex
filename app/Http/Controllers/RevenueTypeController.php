@@ -33,7 +33,7 @@ class RevenueTypeController extends Controller
     		'note'=>$data['note'],
     	]);
 
-    	return redirect('/dashboard/revenue-types')->with('flashMessage',['status'=>'success','message'=>'Successfully create revenue type.']);
+    	return redirect('/setup-data/revenue-type')->with('flashMessage',['status'=>'success','message'=>'Successfully create revenue type.']);
     }
 
     public function showEditRevenueTypeForm($revenue_type_id)
@@ -57,12 +57,12 @@ class RevenueTypeController extends Controller
             'note'=>$data['note'],
         ]);
 
-        return redirect('/dashboard/revenue-types')->with('flashMessage',['status'=>'success','message'=>'Successfully update revenue type.']);
+        return redirect('/setup-data/revenue-type')->with('flashMessage',['status'=>'success','message'=>'Successfully update revenue type.']);
     }
 
     public function delete_revenue_type($revenue_type_id)
     {
         RevenueType::findOrFail($revenue_type_id)->delete();
-        return redirect('/dashboard/revenue-types')->with('flashMessage',['status'=>'success','message'=>'Successfully delete revenue type.']);
+        return redirect('/setup-data/revenue-type')->with('flashMessage',['status'=>'success','message'=>'Successfully delete revenue type.']);
     }
 }

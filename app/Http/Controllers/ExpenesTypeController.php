@@ -33,7 +33,7 @@ class ExpenesTypeController extends Controller
     		'note'=>$data['note'],
     	]);
 
-    	return redirect('/dashboard/expenes-types')->with('flashMessage',['status'=>'success','message'=>'Successfully create expenes type.']);
+    	return redirect('/setup-data/expense-type')->with('flashMessage',['status'=>'success','message'=>'Successfully create expense type.']);
     }
 
     public function showEditExpenesTypeForm($expenes_type_id)
@@ -57,12 +57,12 @@ class ExpenesTypeController extends Controller
             'note'=>$data['note'],
         ]);
 
-        return redirect('/dashboard/expenes-types')->with('flashMessage',['status'=>'success','message'=>'Successfully update expenes type.']);
+        return redirect('/setup-data/expense-type')->with('flashMessage',['status'=>'success','message'=>'Successfully update expense type.']);
     }
 
     public function delete_expenes_type($expenes_type_id)
     {
         ExpenesType::findOrFail($expenes_type_id)->delete();
-        return redirect('/dashboard/expenes-types')->with('flashMessage',['status'=>'success','message'=>'Successfully delete expenes type.']);
+        return redirect('/setup-data/expense-type')->with('flashMessage',['status'=>'success','message'=>'Successfully delete expense type.']);
     }
 }

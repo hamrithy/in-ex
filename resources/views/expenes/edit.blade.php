@@ -1,16 +1,16 @@
 @extends ('layouts.dashboard')
 @section('title')
-Update Expenes
+Edit Expenes
 @endsection
 @section('content')
 <div class="box box-primary">
     <div class="box-header with-border">
-        <h3 class="box-title">Update Expenes</h3>
+        <h3 class="box-title">Edit Expenes</h3>
     </div>
-    {{Form::model($expenes,['url'=>'/dashboard/expenes/edit/'.$expenes->id,'method'=>'post'])}}
+    {{Form::model($expenes,['url'=>'/post-data/expense/edit/'.$expenes->id,'method'=>'post'])}}
         <div class="box-body">
             <div class="form-group @if ($errors->has('date')) has-error @endif">
-                {{Form::label('date','Revenue Date')}}
+                {{Form::label('date','Expense Date')}}
                 <div class="input-group">
                     <div class="input-group-addon">
                         <i class="fa fa-calendar"></i>
@@ -29,8 +29,8 @@ Update Expenes
 	            @endif
             </div>
             <div class="form-group @if ($errors->has('expenes_type_id')) has-error @endif">
-                {{Form::label('expenes_type_id','Expenes Type')}}
-                {{Form::select('expenes_type_id',$expenes_types,old('expenes_type_id'),['class'=>'form-control','placeholder'=>'Select expenes type'])}}
+                {{Form::label('expenes_type_id','Expense Type')}}
+                {{Form::select('expenes_type_id',$expenes_types,old('expenes_type_id'),['class'=>'form-control','placeholder'=>'Select expense type'])}}
                 @if ($errors->has('expenes_type_id'))
                     <span class="help-block">{{ $errors->first('expenes_type_id') }}</span>
                 @endif
@@ -43,8 +43,8 @@ Update Expenes
                 @endif
             </div>
             <div class="form-group @if ($errors->has('price')) has-error @endif">
-                {{Form::label('price','Expenes Price')}}
-                {{Form::number('price',old('price'),['class'=>'form-control','placeholder'=>'Enter expenes price', 'step'=>'any'])}}
+                {{Form::label('price','Expense Price')}}
+                {{Form::number('price',old('price'),['class'=>'form-control','placeholder'=>'Enter expense price', 'step'=>'any'])}}
                 @if ($errors->has('price'))
                     <span class="help-block">{{ $errors->first('price') }}</span>
                 @endif

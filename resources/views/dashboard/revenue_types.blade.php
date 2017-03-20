@@ -1,6 +1,6 @@
 @extends ('layouts.dashboard')
 @section('title')
-Revenue Types
+Revenue Type List
 @endsection
 @section('content')
 <div class="row">
@@ -9,7 +9,7 @@ Revenue Types
             <div class="box-header">
                 <div class="box-title"><div class="input-group input-group-sm" style="width: 150px;">
                     <div class="input-group-btn">
-                            <a href="/dashboard/revenue-types/add" class="btn btn-block btn-primary">Create New</a>
+                            <a href="/setup-data/revenue-type/add" class="btn btn-block btn-primary">Create New</a>
                         </div>
                     </div>
                 </div>
@@ -28,9 +28,9 @@ Revenue Types
                             <td>{{$revenue_type->type}}</td>
                             <td>{{$revenue_type->note}}</td>
                             <td>
-                                <a href="/dashboard/revenue-types/edit/{{$revenue_type->id}}" class="text-primary">Edit</a>
+                                <a href="/setup-data/revenue-type/edit/{{$revenue_type->id}}" class="text-primary">Edit</a>
                                  | 
-                                <a class="btnDelete text-danger" data-url="/dashboard/revenue-types/delete/{{$revenue_type->id}}" href="javascript:void(0)" >Delete</a>
+                                <a class="btnDelete text-danger" data-url="/setup-data/revenue-type/delete/{{$revenue_type->id}}" href="javascript:void(0)" >Delete</a>
                             </td>
                         </tr>
                         @endforeach

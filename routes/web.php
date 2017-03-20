@@ -15,15 +15,14 @@ Route::get('/', function () {
     return view('auth.login');
 });
 
-Route::get('/home', function () {
-    return redirect('/dashboard');
-});
-
 Auth::routes();
 Route::get('/logout','DashboardController@logout');
 
-Route::group(['middleware'=>'auth','prefix'=>'dashboard'],function(){
-	Route::get('/','DashboardController@dashboard');
+Route::group(['middleware'=>'auth'],function(){
+	Route::get('/',function(){
+		return redirect('/dashboard');
+	});
+	Route::get('/dashboard','DashboardController@dashboard');
 	Route::get('/users','DashboardController@users');
 
 	/*ADMIN MIDDLEWARE*/
@@ -39,7 +38,7 @@ Route::group(['middleware'=>'auth','prefix'=>'dashboard'],function(){
 		});
 
 		/*Expenes Type Route Group*/
-		Route::group(['prefix'=>'expenes-types'],function(){
+		Route::group(['prefix'=>'setup-data/expense-type'],function(){
 			Route::get('/','DashboardController@expenes_types');
 			Route::get('/add','ExpenesTypeController@showAddExpenesTypeForm');
 			Route::post('/add','ExpenesTypeController@add_expenes_type');
@@ -49,7 +48,7 @@ Route::group(['middleware'=>'auth','prefix'=>'dashboard'],function(){
 		});
 
 		/*Revenue Type Route Group*/
-		Route::group(['prefix'=>'revenue-types'],function(){
+		Route::group(['prefix'=>'setup-data/revenue-type'],function(){
 			Route::get('/','DashboardController@revenue_types');
 			Route::get('/add','RevenueTypeController@showAddRevenueTypeForm');
 			Route::post('/add','RevenueTypeController@add_revenue_type');
@@ -60,19 +59,19 @@ Route::group(['middleware'=>'auth','prefix'=>'dashboard'],function(){
 	});
 
 	/*Revenue Route Group*/
-	Route::group(['prefix'=>'revenues'],function(){
+	Route::group(['prefix'=>'post-data/revenue'],function(){
 		Route::get('/','DashboardController@revenues');
 		Route::get('/add','RevenueController@showAddRevenueForm');
 		Route::post('/add','RevenueController@add_revenue');
 		Route::get('/edit/{id}','RevenueController@showEditRevenueForm');
 		Route::post('/edit/{id}','RevenueController@edit_revenue');
-		Route::group(['middleware'=>'admin','prefix'=>'dashboard'],function(){
+		Route::group(['middleware'=>'admin'],function(){
 			Route::get('/delete/{id}','RevenueController@delete_revenue');
 		});
 	});
 
 	/*Expenes Route Group*/
-	Route::group(['prefix'=>'expenes'],function(){
+	Route::group(['prefix'=>'post-data/expense'],function(){
 		Route::get('/','DashboardController@expenes');
 		Route::get('/add','ExpenesController@showAddExpenesForm');
 		Route::post('/add','ExpenesController@add_expenes');
@@ -84,9 +83,19 @@ Route::group(['middleware'=>'auth','prefix'=>'dashboard'],function(){
 	});
 
 	/*Statement Route Group*/
-	Route::group(['prefix'=>'statements'],function(){
-		Route::get('/','StatementController@showAddStatementForm');
-		Route::get('/getStatement/{from}/{to}','StatementController@getStatement');
-		Route::post('/add','StatementController@add_statement');
+	Route::group(['prefix'=>'report'],function(){
+
+		Route::get('/revenue','ReportController@showRevenueReport');
+		Route::get('/revenue/{from}/{to}','ReportController@getRevenueReport');
+
+		Route::get('/expense','ReportController@showExpenseReport');
+		Route::get('/expense/{from}/{to}','ReportController@getExpenseReport');
+
+		Route::get('/income-statement','ReportController@showIncomeStatementReport');
+		Route::get('/income-statement/{from}/{to}','ReportController@getIncomeStatementReport');
+		Route::post('/income-statement','ReportController@storeIncomeStatement');
+
+		Route::get('/print/{report}/{from}/{to}','ReportController@printReport');
+
 	});
 });
