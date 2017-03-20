@@ -15,8 +15,8 @@ class CreateRevenueTypesTable extends Migration
     {
         Schema::create('revenue_types', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('type');
-            $table->text('note')->nullable();
+            $table->string('type',60);
+            $table->text('note',200)->nullable()->default(null);
             $table->softDeletes();
             $table->timestamps();
         });

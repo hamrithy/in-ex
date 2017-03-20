@@ -15,8 +15,8 @@ class CreateExpenesTypesTable extends Migration
     {
         Schema::create('expenes_types', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('type');
-            $table->text('note')->nullable();
+            $table->string('type',60);
+            $table->text('note')->nullable()->default(null);
             $table->softDeletes();
             $table->timestamps();
         });

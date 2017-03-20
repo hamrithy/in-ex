@@ -17,7 +17,7 @@ class CreateStatementsTable extends Migration
             $table->increments('id');
             $table->date('from');
             $table->date('to');
-            $table->double('net_income',2);
+            $table->decimal('net_income',10,2);
             $table->softDeletes();
             $table->timestamps();
         });

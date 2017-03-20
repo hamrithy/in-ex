@@ -44,14 +44,14 @@ Update Expenes
             </div>
             <div class="form-group @if ($errors->has('price')) has-error @endif">
                 {{Form::label('price','Expenes Price')}}
-                {{Form::text('price',old('price'),['class'=>'form-control','placeholder'=>'Enter expenes price'])}}
+                {{Form::number('price',old('price'),['class'=>'form-control','placeholder'=>'Enter expenes price', 'step'=>'any'])}}
                 @if ($errors->has('price'))
                     <span class="help-block">{{ $errors->first('price') }}</span>
                 @endif
             </div>
             <div class="form-group @if ($errors->has('exchange_rate')) has-error @endif">
                 {{Form::label('exchange_rate','Price\'s Exchange Rate')}}
-                {{Form::text('exchange_rate',old('exchange_rate'),['class'=>'form-control','placeholder'=>'Exchange rate in 1 USD'])}}
+                {{Form::number('exchange_rate',old('exchange_rate'),['class'=>'form-control','placeholder'=>'Exchange rate in 1 USD', 'step'=>'any'])}}
                 @if ($errors->has('exchange_rate'))
                     <span class="help-block">{{ $errors->first('exchange_rate') }}</span>
                 @endif

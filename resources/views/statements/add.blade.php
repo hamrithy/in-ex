@@ -1,6 +1,6 @@
 @extends ('layouts.dashboard')
 @section('title')
-Print Statement
+Imcome Statement
 @endsection
 @section('content')
 <div class="box box-primary">

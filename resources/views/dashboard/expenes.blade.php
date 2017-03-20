@@ -30,9 +30,9 @@ Expenes
                             <td>{{$expene->date}}</td>
                             <td>{{$expene->reference_no}}</td>
                             <td>{{$expene->expenes_type->type}}</td>
-                            <td>{{$expene->currency}} {{$expene->price}}</td>
-                            <td>{{$expene->currency}} {{$expene->exchange_rate}}</td>
-                            <td>USD {{$expene->total}}</td>
+                            <td>{{$expene->currency}} {{number_format($expene->price, 2, '.', ',')}}</td>
+                            <td>{{$expene->currency}} {{number_format($expene->exchange_rate, 2, '.', ',')}}</td>
+                            <td>USD {{number_format($expene->total, 2, '.', ',')}}</td>
                             <td>
                                 <a href="/dashboard/expenes/edit/{{$expene->id}}" class="text-primary">Edit</a>
                                  | 

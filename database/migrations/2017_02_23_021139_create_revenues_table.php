@@ -16,12 +16,12 @@ class CreateRevenuesTable extends Migration
         Schema::create('revenues', function (Blueprint $table) {
             $table->increments('id');
             $table->date('date');
-            $table->string('reference_no');
+            $table->string('reference_no',60);
             $table->integer('revenue_type_id')->unsigned();
-            $table->double('price',2);
-            $table->double('exchange_rate',2);
+            $table->double('price',10,2);
+            $table->double('exchange_rate',10,2);
             $table->enum('currency',['KHR','THB','USD']);
-            $table->double('total',2);
+            $table->double('total',10,2);
             $table->softDeletes();
             $table->timestamps();
         });

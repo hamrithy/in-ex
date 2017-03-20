@@ -44,14 +44,14 @@ Create Revenue
             </div>
             <div class="form-group @if ($errors->has('price')) has-error @endif">
                 {{Form::label('price','Revenue Price')}}
-                {{Form::text('price',old('price'),['class'=>'form-control','placeholder'=>'Enter revenue price'])}}
+                {{Form::number('price',old('price'),['class'=>'form-control','placeholder'=>'Enter revenue price', 'step'=>'any'])}}
                 @if ($errors->has('price'))
                     <span class="help-block">{{ $errors->first('price') }}</span>
                 @endif
             </div>
             <div class="form-group @if ($errors->has('exchange_rate')) has-error @endif">
                 {{Form::label('exchange_rate','Price\'s Exchange Rate')}}
-                {{Form::text('exchange_rate',old('exchange_rate'),['class'=>'form-control','placeholder'=>'Exchange rate in 1 USD'])}}
+                {{Form::number('exchange_rate',old('exchange_rate'),['class'=>'form-control','step'=>'any', 'placeholder'=>'Exchange rate in 1 USD'])}}
                 @if ($errors->has('exchange_rate'))
                     <span class="help-block">{{ $errors->first('exchange_rate') }}</span>
                 @endif

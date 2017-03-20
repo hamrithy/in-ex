@@ -1,9 +1,9 @@
 <div class="box box-primary">
-    <div class="box-header with-border">
-        <h3 class="box-title">Revenues Table</h3>
-    </div>
     <div class="box-body table-responsive no-padding">
-        <table class="table table-hover">
+        <table class="table">
+            <tr>
+                <th><h4 class="box-title"><b>Revenues</b></h4></th>
+            </tr>
             <tr>
                 <th>Date</th>
                 <th>Reference No</th>
@@ -17,28 +17,22 @@
                 <td>{{$revenue->created_at}}</td>
                 <td>{{$revenue->reference_no}}</td>
                 <td>{{$revenue->revenue_type->type}}</td>
-                <td>{{$revenue->currency}} {{$revenue->price}}</td>
-                <td>{{$revenue->currency}} {{$revenue->exchange_rate}}</td>
-                <td>USD {{$revenue->total}}</td>
+                <td>{{$revenue->currency}} {{number_format($revenue->price, 2, '.', ',')}}</td>
+                <td>{{$revenue->currency}} {{number_format($revenue->exchange_rate, 2, '.', ',')}}</td>
+                <td>USD {{number_format($revenue->total, 2, '.', ',')}}</td>
             </tr>
             @endforeach
-            <tr class="alert alert-success grand-total">
+            <tr>
                 <td></td>
                 <td></td>
                 <td></td>
                 <td></td>
-                <td><b>GRAND TOTAL:</b></td>
-                <td class=""><b>USD {{$totalRevenue}}</b></td>
+                <td class="alert alert-success"><b>GRAND TOTAL:</b></td>
+                <td class="alert alert-success"><b>USD {{number_format($totalRevenue, 2, '.', ',')}}</b></td>
             </tr>
-        </table>
-    </div>
-</div>
-<div class="box box-primary">
-    <div class="box-header with-border">
-        <h3 class="box-title">Expenes Table</h3>
-    </div>
-    <div class="box-body table-responsive no-padding">
-        <table class="table table-hover">
+            <tr>
+                <th><h4 class="box-title"><b>Expenes</b></h4></th>
+            </tr>
             <tr>
                 <th>Date</th>
                 <th>Reference No</th>
@@ -52,36 +46,33 @@
                 <td>{{$expene->created_at}}</td>
                 <td>{{$expene->reference_no}}</td>
                 <td>{{$expene->expenes_type->type}}</td>
-                <td>{{$expene->currency}} {{$expene->price}}</td>
-                <td>{{$expene->currency}} {{$expene->exchange_rate}}</td>
-                <td>USD {{$expene->total}}</td>
+                <td>{{$expene->currency}} {{number_format($expene->price, 2, '.', ',')}}</td>
+                <td>{{$expene->currency}} {{number_format($expene->exchange_rate, 2, '.', ',')}}</td>
+                <td>USD {{number_format($expene->total, 2, '.', ',')}}</td>
             </tr>
             @endforeach
-            <tr class="alert alert-danger grand-total">
+            <tr>
                 <td></td>
                 <td></td>
                 <td></td>
                 <td></td>
-                <td><b>GRAND TOTAL:</b></td>
-                <td class=""><b>USD {{$totalExpenes}}</b></td>
+                <td class="alert alert-danger"><b>GRAND TOTAL:</b></td>
+                <td class="alert alert-danger"><b>USD {{number_format($totalExpenes, 2, '.', ',')}}</b></td>
             </tr>
-        </table>
-    </div>
-</div>
-<div class="box-footer">
-    <div class="box-body table-responsive no-padding" id="">
-        <table class="table table-hover">
-            <tr class="alert alert-success">
+            <tr>
+                <th><h4><b>Incomes</b></h4></th>
+            </tr>
+            <tr>
                 <td></td>
                 <td></td>
                 <td></td>
                 <td></td>
-                <td></td>
-                <td><p class="net-income"><b>NET INCOME: <span id="netIncome">USD {{$totalRevenue-$totalExpenes}}</span></b></p></td>
+                <td class="alert alert-info"><b>NET INCOME:</b></td>
+                <td class="alert alert-info"><b>USD {{number_format($totalRevenue-$totalExpenes, 2, '.', ',')}}</b></td> 
             </tr>
         </table>
     </div>
 </div>
 <script>
-    $("#netIncome").val({{$totalRevenue-$totalExpenes}});
+    $('#netIncome').val({{$totalRevenue-$totalExpenes}});
 </script>

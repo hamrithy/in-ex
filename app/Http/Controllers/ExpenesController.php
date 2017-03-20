@@ -16,8 +16,8 @@ class ExpenesController extends Controller
             'date'=>'required|date',
     		'reference_no'=>'required',
     		'expenes_type_id'=>'required|exists:expenes_types,id',
-    		'price'=>'required|numeric',
-    		'exchange_rate'=>'required|numeric',
+    		'price'=>'required|numeric|between:0,9999999999.99',
+    		'exchange_rate'=>'required|numeric|between:0,9999999999.99',
     		'currency'=>'required|in:KHR,THB,USD',
     	]);
     }

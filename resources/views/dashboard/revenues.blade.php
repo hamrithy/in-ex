@@ -30,9 +30,9 @@ Revenues
                             <td>{{$revenue->date}}</td>
                             <td>{{$revenue->reference_no}}</td>
                             <td>{{$revenue->revenue_type->type}}</td>
-                            <td>{{$revenue->currency}} {{$revenue->price}}</td>
-                            <td>{{$revenue->currency}} {{$revenue->exchange_rate}}</td>
-                            <td>USD {{$revenue->total}}</td>
+                            <td>{{$revenue->currency}} {{number_format($revenue->price, 2, '.', ',')}}</td>
+                            <td>{{$revenue->currency}} {{number_format($revenue->exchange_rate, 2, '.', ',')}}</td>
+                            <td>USD {{number_format($revenue->total, 2, '.', ',')}}</td>
                             <td>
                                 <a href="/dashboard/revenues/edit/{{$revenue->id}}" class="text-primary">Edit</a>
                                  | 
